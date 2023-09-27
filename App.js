@@ -1,11 +1,8 @@
-import React from 'react';
-import {View} from 'react-native';
-import {WebView} from 'react-native-webview';
+import React from "react";
+import BottomTabs from "./src/TabNavigator/BottomTabs";
 
 function App() {
-  return (
-      <WebView source={{uri: 'https://coveruponline.com'}} style={{flex: 1}} />
-  );
+  return <BottomTabs />;
 }
 
 export default App;
