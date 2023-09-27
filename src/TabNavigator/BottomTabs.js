@@ -32,7 +32,7 @@ function MyTabs() {
         keyboardHidesTabBar: true,
         lazy: false,
         tabBarStyle: {
-          height: 60,
+          height: Platform.OS === "android" ? 60 : 80,
         },
         tabBarLabelStyle: {
           paddingBottom: Platform.OS === "android" ? 5 : 0,
