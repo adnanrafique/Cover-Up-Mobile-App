@@ -27,9 +27,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WhatsApp Image 2023-09-28 at 1.21.43 AM" translatesAutoresizingMaskIntoConstraints="NO" id="mQP-2t-WzS">
-                                <rect key="frame" x="64" y="224" width="295" height="143"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="WhatsApp Image 2023-09-28 at 1.21.43 AM" translatesAutoresizingMaskIntoConstraints="NO" id="mQP-2t-WzS">
+                                <rect key="frame" x="63" y="182" width="249" height="283"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
@@ -37,9 +36,13 @@
                         <constraints>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="MN2-I3-ftu" secondAttribute="bottom" constant="20" id="OZV-Vh-mqD"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="centerX" secondItem="GJd-Yh-RWb" secondAttribute="centerX" id="Q3B-4B-g5h"/>
+                            <constraint firstItem="mQP-2t-WzS" firstAttribute="top" secondItem="GJd-Yh-RWb" secondAttribute="bottom" constant="50" id="TMU-TQ-gBs"/>
+                            <constraint firstItem="MN2-I3-ftu" firstAttribute="top" secondItem="mQP-2t-WzS" secondAttribute="bottom" constant="50" id="VUZ-wM-lLM"/>
                             <constraint firstItem="MN2-I3-ftu" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="akx-eg-2ui"/>
                             <constraint firstItem="MN2-I3-ftu" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="i1E-0Y-4RG"/>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="bottom" multiplier="1/3" constant="1" id="moa-c2-u7t"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="mQP-2t-WzS" secondAttribute="trailing" constant="50" id="rvk-j7-n1f"/>
+                            <constraint firstItem="mQP-2t-WzS" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="50" id="stJ-De-6dT"/>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" symbolic="YES" id="x7j-FC-K8j"/>
                         </constraints>
                     </view>
@@ -50,7 +53,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="WhatsApp Image 2023-09-28 at 1.21.43 AM" width="1000" height="1000"/>
+        <image name="WhatsApp Image 2023-09-28 at 1.21.43 AM" width="500" height="500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
