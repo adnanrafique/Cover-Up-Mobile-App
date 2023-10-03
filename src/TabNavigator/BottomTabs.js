@@ -17,10 +17,14 @@ import {
   Cart_inactive_icon,
   Categories_active_icon,
   Categories_inactive_icon,
+  Home_active_icon,
+  Home_inactive_icon,
+  Whatsapp_icon,
   Wishlist_active_icon,
   Wishlist_inactive_icon,
 } from "../assets/assetIndex";
-// defining constanrs
+import HomeScreen from "../screens/HomeScreen";
+// defining constants
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 // Tabs function
@@ -41,19 +45,34 @@ function MyTabs() {
       }}
     >
       <Tab.Screen
+        name="Home"
+        options={{
+          tabBarLabel: "Home",
+
+          tabBarIcon: ({ focused }) =>
+            focused ? (
+              <Home_active_icon height={25} width={25} />
+            ) : (
+              <Home_inactive_icon height={25} width={25} />
+            ),
+        }}
+        component={HomeScreen}
+      />
+      <Tab.Screen
         name="Categories"
         options={{
           tabBarLabel: "Categories",
 
           tabBarIcon: ({ focused }) =>
             focused ? (
-              <Categories_active_icon height={20} width={20} />
+              <Categories_active_icon height={25} width={25} />
             ) : (
-              <Categories_inactive_icon height={20} width={20} />
+              <Categories_inactive_icon height={25} width={25} />
             ),
         }}
         component={CategoriesScreen}
       />
+
       <Tab.Screen
         name="Wishlist"
         options={{
