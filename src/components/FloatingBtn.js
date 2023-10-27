@@ -28,12 +28,9 @@ const styles = StyleSheet.create({
   floatingBtnStyle: {
     position: "absolute",
     bottom:
-      Platform.OS === "android" ? screen_height * 0.03 : screen_height * 0.1,
-    right: screen_width * 0.08,
-    // borderRadius: 100,
-    // padding: 7,
+      Platform.OS === "android" ? screen_height * 0 : screen_height * 0.015,
+    right: screen_width * 0,
     alignItems: "center",
     justifyContent: "center",
-    // backgroundColor: "#fff",
   },
 });
