@@ -1,44 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
-  ActivityIndicator,
-  Dimensions,
   StyleSheet,
-  Text,
   View,
+  ActivityIndicator,
+  SafeAreaView,
 } from "react-native";
 import { WebView } from "react-native-webview";
+
 import FloatingBtn from "../components/FloatingBtn";
 
 export default function CategoriesScreen() {
-  const [isLoading, setIsLoading] = useState(true);
-  const handleWebViewLoad = () => {
-    setIsLoading(false);
-  };
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <>
-      {isLoading && (
-        <ActivityIndicator
-          size={"large"}
-          color={"blue"}
-          style={{
-            marginTop: 40,
-            position: "absolute",
-            top: Dimensions.get("screen").height * 0.4,
-            left: 0,
-            right: 0,
-          }}
-        />
-      )}
+    <SafeAreaView style={styles.container}>
       <WebView
         source={{
           uri: "https://coveruponline.com/index.php?route=product/catalog",
         }}
-        onLoad={handleWebViewLoad}
         style={{ flex: 1 }}
+        onLoad={() => setLoading(false)}
       />
+      {loading && (
+        <View style={styles.overlay}>
+          <ActivityIndicator size="large" color="rgb(37,150,190)" />
+        </View>
+      )}
       <FloatingBtn />
-    </>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  overlay: {
+    ...StyleSheet.absoluteFill,
+    backgroundColor: "transparent",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
