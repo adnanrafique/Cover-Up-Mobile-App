@@ -12,12 +12,12 @@ import FloatingBtn from "../components/FloatingBtn";
 export default function CartScreen() {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 4000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -26,7 +26,7 @@ export default function CartScreen() {
           uri: "https://coveruponline.com/index.php?route=checkout/cart",
         }}
         style={{ flex: 1 }}
-        onLoad={() => setLoading(false)}
+        onLoadEnd={() => setLoading(false)}
       />
       {loading && (
         <View style={styles.overlay}>

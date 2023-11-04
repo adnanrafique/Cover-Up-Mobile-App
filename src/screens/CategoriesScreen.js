@@ -12,12 +12,12 @@ import FloatingBtn from "../components/FloatingBtn";
 export default function CategoriesScreen() {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 5000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -26,7 +26,7 @@ export default function CategoriesScreen() {
           uri: "https://coveruponline.com/index.php?route=product/catalog",
         }}
         style={{ flex: 1 }}
-        onLoad={() => setLoading(false)}
+        onLoadEnd={() => setLoading(false)}
       />
       {loading && (
         <View style={styles.overlay}>
