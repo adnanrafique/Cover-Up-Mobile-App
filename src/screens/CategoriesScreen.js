@@ -26,6 +26,8 @@ export default function CategoriesScreen() {
           uri: "https://coveruponline.com/index.php?route=product/catalog",
         }}
         style={{ flex: 1 }}
+        decelerationRate="fast"
+        automaticallyAdjustContentInsets={true}
         onLoadEnd={() => setLoading(false)}
       />
       {loading && (

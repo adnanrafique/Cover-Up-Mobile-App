@@ -26,6 +26,8 @@ export default function WishlistScreen() {
           uri: "https://coveruponline.com/index.php?route=account/wishlist",
         }}
         style={{ flex: 1 }}
+        decelerationRate="fast"
+        automaticallyAdjustContentInsets={true}
         onLoadEnd={() => setLoading(false)}
       />
       {loading && (

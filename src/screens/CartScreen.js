@@ -26,6 +26,8 @@ export default function CartScreen() {
           uri: "https://coveruponline.com/index.php?route=checkout/cart",
         }}
         style={{ flex: 1 }}
+        decelerationRate="fast"
+        automaticallyAdjustContentInsets={true}
         onLoadEnd={() => setLoading(false)}
       />
       {loading && (

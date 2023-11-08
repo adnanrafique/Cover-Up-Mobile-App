@@ -26,6 +26,8 @@ export default function MyAccountScreen() {
           uri: "https://coveruponline.com/index.php?route=account/account",
         }}
         style={{ flex: 1 }}
+        decelerationRate="fast"
+        automaticallyAdjustContentInsets={true}
         onLoadEnd={() => setLoading(false)}
       />
       {loading && (

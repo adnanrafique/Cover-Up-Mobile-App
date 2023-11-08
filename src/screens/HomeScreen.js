@@ -26,6 +26,9 @@ export default function HomeScreen() {
           uri: "https://coveruponline.com/",
         }}
         style={{ flex: 1 }}
+        decelerationRate="fast"
+        javaScriptEnabled={true}
+        automaticallyAdjustContentInsets={true}
         onLoadEnd={() => setLoading(false)}
       />
       {loading && (
