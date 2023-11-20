@@ -32,6 +32,8 @@ function MyTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
+        gestureEnabled: true,
+        gestureDirection: "horizontal",
         headerShown: false,
         keyboardHidesTabBar: true,
         lazy: false,
@@ -123,7 +125,12 @@ const BottomTabs = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        screenOptions={{ headerShown: false, gestureEnabled: false }}
+        screenOptions={{
+          headerShown: false,
+          gestureEnabled: false,
+          gestureEnabled: true,
+          gestureDirection: "horizontal",
+        }}
       >
         {Platform.OS === "android" ? (
           <Stack.Screen name="Splash" component={SplashScreen} />

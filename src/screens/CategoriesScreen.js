@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   StyleSheet,
   View,
@@ -8,10 +8,29 @@ import {
 import { WebView } from "react-native-webview";
 
 import FloatingBtn from "../components/FloatingBtn";
+import LeftBtn from "../components/LeftBtn";
+import RightBtn from "../components/RightBtn";
 
 export default function CategoriesScreen() {
   const [loading, setLoading] = useState(true);
+  const webViewRef = useRef(null);
+  const [canGoBack, setCanGoBack] = useState(false);
+  const [canGoForward, setCanGoForward] = useState(false);
+  const goBack = () => {
+    if (webViewRef.current && canGoBack) {
+      webViewRef.current.goBack();
+    }
+  };
 
+  const goForward = () => {
+    if (webViewRef.current && canGoForward) {
+      webViewRef.current.goForward();
+    }
+  };
+  const onNavigationStateChange = (navState) => {
+    setCanGoBack(navState.canGoBack);
+    setCanGoForward(navState.canGoForward);
+  };
   // useEffect(() => {
   //   const timer = setTimeout(() => {
   //     setLoading(false);
@@ -22,6 +41,7 @@ export default function CategoriesScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <WebView
+        ref={webViewRef}
         source={{
           uri: "https://coveruponline.com/index.php?route=product/catalog",
         }}
@@ -29,6 +49,7 @@ export default function CategoriesScreen() {
         decelerationRate="fast"
         automaticallyAdjustContentInsets={true}
         onLoadEnd={() => setLoading(false)}
+        onNavigationStateChange={onNavigationStateChange}
       />
       {loading && (
         <View style={styles.overlay}>
@@ -36,6 +57,15 @@ export default function CategoriesScreen() {
         </View>
       )}
       <FloatingBtn />
+      {canGoBack && (
+        <LeftBtn isHistory={loading ? false : true} onPressLeftBtn={goBack} />
+      )}
+      {canGoForward && (
+        <RightBtn
+          isHistory={loading ? false : true}
+          onPressRightBtn={goForward}
+        />
+      )}
     </SafeAreaView>
   );
 }

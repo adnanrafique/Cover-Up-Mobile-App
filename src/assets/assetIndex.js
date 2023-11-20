@@ -9,6 +9,8 @@ import Account_active_icon from "./svgs/accountFilled.svg";
 import Home_active_icon from "./svgs/homeActive.svg";
 import Home_inactive_icon from "./svgs/homeInactive.svg";
 import Whatsapp_icon from "./svgs/whatsapp.svg";
+import Left_icon from "./svgs/left.svg";
+import Right_icon from "./svgs/right.svg";
 
 export {
   Categories_inactive_icon,
@@ -22,4 +24,6 @@ export {
   Home_active_icon,
   Home_inactive_icon,
   Whatsapp_icon,
+  Left_icon,
+  Right_icon,
 };
