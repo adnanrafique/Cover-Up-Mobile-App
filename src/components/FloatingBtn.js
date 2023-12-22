@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   floatingBtnStyle: {
     position: "absolute",
     bottom:
-      Platform.OS === "android" ? screen_height * 0 : screen_height * 0.015,
+      Platform.OS === "android" ? screen_height * 0 : screen_height * 0.05,
     right: screen_width * 0,
     alignItems: "center",
     justifyContent: "center",
